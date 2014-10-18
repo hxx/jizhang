@@ -38,3 +38,26 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Flexible authentication solution for Rails with Warden.
+# https://github.com/plataformatec/devise
+gem 'devise', '~> 3.4.0'
+
+group :development do
+  # Provides a better error page for Rails and other Rack apps.
+  # https://github.com/charliesome/better_errors
+  gem 'better_errors', '~> 1.1.0'
+
+  # Retrieve the binding of a method's caller. Work with better_errors.
+  # https://github.com/banister/binding_of_caller
+  gem 'binding_of_caller', '~> 0.7.2'
+end
+
+group :development, :test do
+  # Use Pry as your rails console
+  # https://github.com/rweng/pry-rails
+  gem 'pry-rails', '~> 0.3.2'
+
+  # Combine 'pry' with 'debugger'. Adds 'step', 'next', and 'continue' commands to control execution.
+  # https://github.com/nixme/pry-debugger
+  gem 'pry-debugger', '~> 0.2.2'
+end
