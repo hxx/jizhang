@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 # http://railstutorial-china.org/rails4/chapter1.html
 group :production do
   gem 'pg', '~> 0.17.1'
+  gem 'rails_12factor', '~> 0.0.3'
 end
 
 # Use ActiveModel has_secure_password
