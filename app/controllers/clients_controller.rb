@@ -1,6 +1,8 @@
+# encoding: utf-8
+
 class ClientsController < ApplicationController
   before_action :set_user
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: [:show, :edit, :update, :destroy, :export]
 
   def index
     @clients = @user.clients.all
@@ -35,6 +37,13 @@ class ClientsController < ApplicationController
   def destroy
     @client.destroy
     redirect_to clients_path
+  end
+
+  def export
+    filename = "客户导出-#{Date.today}.xls"
+    respond_to do |format|
+      format.xls { headers["Content-Disposition"] = "attachment; filename=\"#{filename}\"" }
+    end
   end
 
   private
